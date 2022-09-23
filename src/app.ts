@@ -6,6 +6,10 @@ dotenv.config();
 const app: Express = express();
 const port = process.env.PORT;
 
+import { getHealthCheck } from "./routes/getHealthCheck";
+
+app.get("/ping", getHealthCheck);
+
 app.get("/", (req: Request, res: Response) => {
   res.send("Express & TypeScript Server");
 });
