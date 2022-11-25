@@ -8,7 +8,6 @@ import * as controller from "../controllers";
 
 export const postSaveResponseBatch = async (req: Request, res: Response) => {
   try {
-    console.log(req.body);
     const { file } = req;
     const filetypes = /csv/;
     if (!file) {
@@ -28,8 +27,6 @@ export const postSaveResponseBatch = async (req: Request, res: Response) => {
       .on("data", async (row: any) => {
         insertSuccess.push(
           new Promise((resolve, reject) => {
-            console.log(row);
-
             const person: NewPerson = {
               name: row.nome,
               lastName: row.sobrenome,
@@ -44,7 +41,6 @@ export const postSaveResponseBatch = async (req: Request, res: Response) => {
               size: row.tamanhoEmpresa,
             };
             const className: string = row.curso;
-            console.log({ person, company, className });
 
             const personId = controller
               .saveResponse(person, company, className)
@@ -74,8 +70,6 @@ export const postSaveResponseBatch = async (req: Request, res: Response) => {
         });
       });
   } catch (error) {
-    console.log(error);
-
     return ResponseBuilder.internalServerError(res);
   }
 };

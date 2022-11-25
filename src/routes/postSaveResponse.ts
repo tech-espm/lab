@@ -28,10 +28,7 @@ import * as controller from "../controllers";
 
 export const postSaveResponse = async (req: Request, res: Response) => {
   try {
-    console.log(req.body);
-
     const { person, company, className } = req.body;
-    console.log({ person, company, className });
 
     const personId = await controller.saveResponse(person, company, className);
 
@@ -39,8 +36,6 @@ export const postSaveResponse = async (req: Request, res: Response) => {
       ? ResponseBuilder.ok(res, personId)
       : ResponseBuilder.internalServerError(res);
   } catch (error) {
-    console.log(error);
-
     return ResponseBuilder.serviceUnavailable(res);
   }
 };

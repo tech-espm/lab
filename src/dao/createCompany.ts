@@ -19,8 +19,6 @@ export const createCompany = async (company: NewCompany): Promise<number> => {
     company
   );
 
-  console.log({ upsertRes });
-
   if (upsertRes[0]?.insertId) return upsertRes[0].insertId;
 
   const selectRes: any = await DAO.query(
