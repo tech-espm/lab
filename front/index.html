@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro estagio ESPM</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:400,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md-12">
+        <form action="" id="student-form">
+          <h1>ESPM</h1>
+
+          <fieldset>
+            <legend><span class="number">1</span> Registro em lote</legend>
+            <label for="myfile">Select a file:</label>
+            <input type="file" id="myfile" name="myfile" accept=".csv" />
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="number">2</span> Informações do Aluno</legend>
+
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="user_name" />
+            <label for="last_name">Sobrenome:</label>
+            <input type="text" id="last_name" name="user_last_name" />
+
+            <label for="email">Email:</label>
+            <input type="email" id="mail" name="user_email" />
+
+            <label for="student_id">RA:</label>
+            <input type="number" id="student_id" name="user_student_id" />
+
+            <label for="class">Semestre:</label>
+            <select id="class" name="user_class">
+              <option value="ADM">Administração</option>
+              <option value="CA">Cinema E Audiovisual</option>
+              <option value="CP">Comunicação E Publicidade</option>
+              <option value="CS">Ciências Sociais</option>
+              <option value="DES">Design</option>
+              <option value="JOR">Jornalismo</option>
+              <option value="RI">Relações Internacionais</option>
+              <option value="TECH">Sistemas De Informação</option>
+            </select>
+
+            <label for="grade">Semestre:</label>
+            <select id="grade" name="user_grade">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+            </select>
+
+            <label for="birthday">Data de aniversário:</label>
+            <input type="date" id="birthday" name="user_birthday" />
+
+            <label for="salary">Salario:</label>
+            <input type="number" id="salary" name="user_salary" />
+          </fieldset>
+          <fieldset>
+            <legend><span class="number">3</span>Informações da Empresa</legend>
+
+            <label for="company_name">Nome:</label>
+            <input type="text" id="company_name" name="company_name" />
+
+            <label>Numero de funcionarios:</label>
+            <input
+              type="radio"
+              id="1_10"
+              value="1_10"
+              name="company_size"
+            /><label for="1_10" class="light">1 - 10</label><br />
+            <input
+              type="radio"
+              id="10_30"
+              value="10_30"
+              name="company_size"
+            /><label for="10_30" class="light">10 - 30</label><br />
+            <input
+              type="radio"
+              id="30_50"
+              value="30_50"
+              name="company_size"
+            /><label for="30_50" class="light">30 - 50</label><br />
+            <input
+              type="radio"
+              id="50_100"
+              value="50_100"
+              name="company_size"
+            /><label for="50_100" class="light">50 - 100</label><br />
+            <input
+              type="radio"
+              id="100_200"
+              value="100_200"
+              name="company_size"
+            /><label for="100_200" class="light">100 - 200</label><br />
+            <input
+              type="radio"
+              id="200_pls"
+              value="200_pls"
+              name="company_size"
+            /><label for="200_pls" class="light">200+</label><br />
+          </fieldset>
+
+          <button type="submit" id="btnSubmit">Salvar</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script type="text/javascript" src="index.js"></script>
