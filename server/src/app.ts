@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import multer from "multer";
+import cors from "cors";
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
@@ -13,6 +14,7 @@ dotenv.config();
 const app: Express = express();
 const port = process.env.PORT;
 app.use(express.json());
+app.use(cors({ origin: "*" }));
 
 app.get("/ping", getHealthCheck);
 app.post("/response", postSaveResponse);
