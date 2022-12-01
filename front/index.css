@@ -115,3 +115,53 @@ label.light {
     max-width: 480px;
   }
 }
+
+.hide {
+  display: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.birthday {
+  margin-right: 40px;
+  width: 80px;
+}
+.email {
+  margin-right: 40px;
+  width: 200px;
+}
+.ra {
+  margin-right: 40px;
+  width: 88px;
+}
+.semester {
+  margin-right: 20px;
+  width: 16px;
+}
+.salary {
+  margin-right: 80px;
+  width: 68px;
+}
+.del-btn {
+  height: 48px;
+  width: 48px;
+  border-radius: 8px;
+  background-color: #aa0532;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+.full-name {
+  text-transform: capitalize;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 160px;
+  margin-right: 40px;
+}

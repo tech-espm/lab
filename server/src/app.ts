@@ -9,6 +9,8 @@ const upload = multer({ storage });
 import { getHealthCheck } from "./routes/getHealthCheck";
 import { postSaveResponse } from "./routes/postSaveResponse";
 import { postSaveResponseBatch } from "./routes/postSaveResponseBatch";
+import { getPersons } from "./routes/getPersons";
+import { postDeletePersons } from "./routes/postDeletePersons";
 dotenv.config();
 
 const app: Express = express();
@@ -17,8 +19,10 @@ app.use(express.json());
 app.use(cors({ origin: "*" }));
 
 app.get("/ping", getHealthCheck);
-app.post("/response", postSaveResponse);
-app.post("/response/batch", upload.single("file"), postSaveResponseBatch);
+app.get("/person", getPersons);
+app.post("/person", postSaveResponse);
+app.delete("/person/:personId", postDeletePersons);
+app.post("/person/batch", upload.single("file"), postSaveResponseBatch);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express & TypeScript Server");

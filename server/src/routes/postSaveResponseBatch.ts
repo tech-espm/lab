@@ -8,7 +8,7 @@ import * as controller from "../controllers";
 
 export const postSaveResponseBatch = async (req: Request, res: Response) => {
   try {
-    const { file } = req;
+    const { file } = req as any;
     const filetypes = /csv/;
     if (!file) {
       return ResponseBuilder.badRequest(res, "Missing File");
@@ -70,6 +70,8 @@ export const postSaveResponseBatch = async (req: Request, res: Response) => {
         });
       });
   } catch (error) {
+    console.log("deu ruim");
+
     return ResponseBuilder.internalServerError(res);
   }
 };
